@@ -10,13 +10,11 @@ Make sure you have the following installed:
 - **Composer**
 - **MySQL 8.0+**
 - **Node.js 18+** and **npm**
-- **Git**
 
 ### 1. Backend Setup (Laravel API)
 
 ```bash
-# Clone and setup backend
-git clone <backend-repository-url> ominimoBackend
+# Navigate to backend directory
 cd ominimoBackend
 
 # Install dependencies
@@ -27,9 +25,9 @@ cp .env.example .env
 php artisan key:generate
 
 # Database setup
-# Create database: CREATE DATABASE ominimo;
+# Create MySQL database: CREATE DATABASE ominimo;
 php artisan migrate
-php artisan db:seed  # Optional
+php artisan db:seed
 
 # Start backend server
 php artisan serve
@@ -40,15 +38,14 @@ Backend API will be available at: `http://localhost:8000`
 ### 2. Frontend Setup (React)
 
 ```bash
-# Setup frontend (in separate terminal/folder)
-cd ../ominimoFront  # or wherever your React app is located
+# Navigate to frontend directory (in separate terminal)
+cd ominimoFront
 
 # Install dependencies
 npm install
 
 # Create environment file
 cp .env.example .env.local
-# Add: REACT_APP_API_URL=http://localhost:8000/api
 
 # Start frontend development server
 npm run dev
